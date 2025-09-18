@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+nav {
+  padding: 16px 8px;
+  margin-bottom: 30px; 
+  width: 1280px;
+  height: 48px;
+}
+
+nav a .logo {
+  width: 125px;
+  height: 28px;
+}
+
+.user-info a img,
+.user-info a .username {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+nav .user-info  {
+  text-align: right;
+  margin-top: -40px;
+}
+
+.user-info a .notification {
+  margin-right: 10px;
+}
+
+.user-info a .profile {
+  width: 48px;
+  height: 48px;
+  border: 1px solid white;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.user-info a .username {
+  display: inline-block;
+  vertical-align: center;
+  color: #293038;
+}
+
+/* main */
+.container {
+  background-color: #ffffff;
+  width: 800px;
+  height: 672px;
+  margin: 40px;
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 30px;
+  box-shadow: 0px 16px 90px 0px #13073414;
+
+}
+
+section{
+    width: 720px;
+    height: 608px;
+    position: relative;
+}
+
+.section-container{
+    width: 720px;
+    height: 292px;
+}
+
+.section-container .title {
+  color: #ff5f26;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.section-container .main-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #293038;
+}
+
+.section-container .subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #7a7f83;
+}
+
+.addtask {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.addtask .add-btn span,
+.addtask .add-btn img {
+  display: inline-block;
+  vertical-align: middle; 
+}
+
+
+.addtask .add-btn {
+  padding: 12px 15px;
+  background-color: #ff5f26;
+  gap: 8px;
+  border-radius: 60px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 15px;
+  line-height: 24px;
+}
+
+.addtask .add-btn img {
+  width: 24px;
+  height: 24px;
+  border: 2px;
+  margin-right: 8px;
+}
+
+.sort p,
+.sort button {
+  display: inline-block;
+}
+
+.sort p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #7a7f83;
+  margin-top: 15px;
+}
+
+.sort button {
+  position: absolute;
+  right: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff5f26;
+  border-radius: 50px;
+  border: 1px solid #ff5f26;
+  padding: 10px 14px;
+}
+
+.sort button img {
+  margin-left: 10px;
+}
+
+.task{
+    margin-top: 16px;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.checkbox {
+  display: inline-block;
+  border-radius: 100px;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #CCCED2;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+input[type=checkbox]:checked + .checkbox {
+  background-color: #ff5f26;
+  border-color: #ff5f26;
+}
+
+input[type=checkbox]:checked + .checkbox span {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 75%;
+  height: 75%;
+  background-color: white;
+  -webkit-mask: url(/assets/checkmark-outline.svg) no-repeat center;
+  mask: url(/assets/checkmark-outline.svg) no-repeat center;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 500;
+  color: #ff5f26;
+  padding: 8px 12px;
+  background-color: #ffebd3;
+  border-radius: 50px;
+  margin-left: 16px;
+}
+
+.task .task-label, .task .badge{
+    position: relative;
+    top: -8px;
+    margin-left: 14px;
+}
+
+.task .task-label{
+    font-size: 18px;
+    font-weight: 500;
+    color: #293038;
+    cursor: pointer;
+}
+.task .note{
+    font-size: 14px;
+    font-weight: 400;
+    color: #7A7F83;
+    position: relative;
+    left: 47px;
+}
+.task .arrow{
+    position: absolute;
+    right: 0;
+}
+
+.line{
+    border: 1px solid #CCCED2;
+    width: 720px;
+    position: absolute;
+    bottom: 40px;
+}
+
+.end{
+    position: absolute;
+    bottom: 0;
+}
+
+.end img, .end p{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.end p{
+    font-size: 18px;
+    font-weight: 500;
+    color: #7A7F83;
+}
