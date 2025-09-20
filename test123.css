@@ -1,4 +1,0 @@
-input[type=checkbox]::after{
-    display: none;
-    content: "TEST";
-}
