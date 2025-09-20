@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/landingpage/style/dashboard-checklist.css" />
+    <title>Dashboard-checklist</title>
+  </head>
+  <body>
+    <nav>
+      <a href=""><img src="/assets/Logo.svg" alt="" class="logo" /></a>
+      <div class="user-info">
+        <ul>
+          <li>
+            <a href=""
+              ><img
+                class="notification"
+                src="/assets/Notification.svg"
+                alt="notification"
+            /></a>
+          </li>
+          <li>
+            <a href="">
+              <img class="profile" src="/assets/Group 30.png" alt="profile"
+            /></a>
+          </li>
+          <li>
+            <a href=""><p class="username">Krozeo Jupiter</p></a>
+          </li>
+          <li>
+            <a class="arrow" href=""
+              ><img src="/assets/Arrow - Down 2.svg" alt="arrow"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section>
+        <div class="section-container">
+          <h1 class="title">MY TASK</h1>
+          <div class="container-todo">
+            <div class="todolist">
+              <h2 class="main-title">To Do List</h2>
+              <p class="subtitle">Buat list tugas harian saya</p>
+            </div>
+            <div class="addtask">
+              <button class="add-btn">
+                <img src="/assets/Plus.svg" alt="plus" /><span
+                  >Tambah Tugas</span
+                >
+              </button>
+            </div>
+          </div>
+          <div class="sort">
+            <p>Sort By</p>
+            <button>
+              By Tanggal<img src="/assets/Arrow - Down 2.png" alt="" />
+            </button>
+          </div>
+
+          <div class="task">
+              <input type="checkbox" name="check" id="check-1" />
+              <label for="check-1" class="checkbox">
+                <span></span>
+              </label>
+              <div class="task-container">
+                <div class="task-name-row">
+                  <label for="check-1" class="task-label">Product Design</label>
+                  <span class="badge">Hari ini</span>
+                  <img src="/assets/more-vertical.png" alt="">
+                </div>
+
+                <div class="note">Tugas untuk design team</div>
+              </div>
+              <img src="/assets/Arrow - Down 2.svg" alt="arrow" class="arrow" />
+            </div>
+
+          <div class="container-subtask">
+            <div class="subtask">
+              <p>Subtask</p>
+              <button><img src="/assets/Plus-orange.svg" alt="add-subtask">Tambah</button>
+            </div>
+            <div class="task">
+            <input type="checkbox" name="subtask" id="design" />
+            <label for="design" class="checkbox">
+              <span></span>
+            </label>
+
+            <label for="design" class="subtask-label">Low-Fidelity design</label>
+            <img src="/assets/Vector.png" alt="arrow" class="arrow" />
+          </div>
+          <div class="task">
+            <input type="checkbox" name="subtask" id="low-fidelity-design" />
+            <label for="low-fidelity-design" class="checkbox">
+              <span></span>
+            </label>
+
+            <label for="low-fidelity-design" class="subtask-label">High-Fidelity design</label>
+            <img src="/assets/Vector.png" alt="arrow" class="arrow" />
+          </div>
+          <div class="task">
+            <input type="checkbox" name="subtask-subtask" id="high-fidelity-design" />
+            <label for="high-fidelity-design" class="checkbox">
+              <span></span>
+            </label>
+
+            <label for="high-fidelity-design" class="subtask-label">Design Guidelines</label>
+            <img src="/assets/Vector.png" alt="arrow" class="arrow" />
+          </div>
+          <div class="task">
+            <input type="checkbox" name="subtask" id="design-guidelines" />
+            <label for="design-guidelines" class="checkbox">
+              <span></span>
+            </label>
+
+            <label for="design-guidelines" class="subtask-label">Design review</label>
+            <img src="/assets/Vector.png" alt="arrow" class="arrow" />
+          </div>
+          </div>
+
+           <div class="task">
+              <input type="checkbox" name="check" id="check-2" />
+              <label for="check-2" class="checkbox">
+                <span></span>
+              </label>
+              <div class="task-container">
+                <div class="task-name">
+                  <label for="check-2" class="task-label">Development</label>
+                  <span class="badge">15 Juni 2020</span>
+                </div>
+              </div>
+              <img src="/assets/Arrow - Down 2.svg" alt="arrow" class="arrow" />
+            </div>
+
+          <div class="task">
+              <input type="checkbox" name="check" id="check-3" />
+              <label for="check-3" class="checkbox">
+                <span></span>
+              </label>
+              <div class="task-container">
+                <div class="task-name">
+                  <label for="check-3" class="task-label"
+                    >Task Launching Wazwez Website</label
+                  >
+                  <span class="badge">20 Juni 2020</span>
+                </div>
+              </div>
+              <img src="/assets/Arrow - Down 2.svg" alt="arrow" class="arrow" />
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="end">
+          <img src="/assets/Arrow - Right 2.png" alt="arrow-right" />
+          <p>Terselesaikan (3 tugas)</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
