@@ -313,7 +313,7 @@ input[type="checkbox"]:checked + .checkbox {
 }
 
 input[type="checkbox"]:checked + .checkbox span {
-  width: 18px; /* perkiraan biar proporsional */
+  width: 18px; 
   height: 18px;
   background-color: white;
   -webkit-mask: url(/assets/checkmark-outline.svg) no-repeat center / contain;
