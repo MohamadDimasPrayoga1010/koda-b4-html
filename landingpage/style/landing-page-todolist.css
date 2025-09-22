@@ -95,7 +95,7 @@ section {
 }
 
 .section-container .title {
-  color: #ff5f26;
+  color: #647FBC;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 1px;
@@ -124,7 +124,7 @@ section {
   display: flex;
   align-items: center;
   padding: 12px 15px;
-  background-color: #ff5f26;
+  background-color: #647FBC;
   gap: 8px;
   border-radius: 60px;
   border: none;
@@ -153,11 +153,15 @@ section {
   align-items: center;
   font-size: 14px;
   font-weight: 600;
-  color: #ff5f26;
+  color: #647FBC;
   border-radius: 50px;
-  border: 1px solid #ff5f26;
+  border: 1px solid #647FBC;
   padding: 10px 14px;
   gap: 10px;
+}
+
+label span img{
+filter: brightness(0) saturate(100%) invert(45%) sepia(66%) saturate(320%) hue-rotate(183deg) brightness(95%) contrast(91%);
 }
 
 .container-subtask {
@@ -455,8 +459,8 @@ input[type="checkbox"]:checked ~ .subtask-label {
   padding: 8px 12px;
   font-size: 12px;
   font-weight: 500;
-  color: #ff5f26;
-  background-color: #ffebd3;
+  color: #fff;
+  background-color: #91ADC8;
   border-radius: 50px;
 }
 
