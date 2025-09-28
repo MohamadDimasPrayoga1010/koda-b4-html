@@ -32,7 +32,7 @@ define(["jquery", "moment"], function ($, moment) {
       tasks.push(newTask);
       saveTasks(tasks);
 
-      // Reset form
+  
       $("#taskTitle, #taskDesc, #taskDate").val("");
       $this.prop("checked", false);
       $form.hide();
@@ -58,22 +58,29 @@ define(["jquery", "moment"], function ($, moment) {
       <article class="flex justify-between items-center subtask-item" data-subtask-id="${
         sub.id
       }" data-task-id="${task.id}">
-        <div class="flex items-center gap-3 my-3">
-          <input type="checkbox" id="subtask-${
-            sub.id
-          }" class="w-[28px] h-[28px] rounded-full border border-gray-400 appearance-none subtask-checkbox" data-subtask-id="${
-          sub.id
-        }" ${sub.completed ? "checked" : ""}/>
-          <p class="text-base font-normal ${
-            sub.completed ? "line-through text-gray-500" : ""
-          }">${sub.title}</p>
-        </div>
-        <button class="delete-subtask-btn text-red-500 hover:text-red-700" data-subtask-id="${
-          sub.id
-        }" data-task-id="${task.id}" title="Hapus subtask">
-          <img src="/assets/images/Vector.png" alt=""/>
-        </button>
-      </article>`
+  <div class="flex items-center gap-3 my-3">
+    <!-- Custom Checkbox -->
+    <label class="relative cursor-pointer">
+      <input type="checkbox" class="sr-only peer subtask-checkbox" data-subtask-id="${
+        sub.id
+      }" ${sub.completed ? "checked" : ""}/>
+      <div class="custom-checkbox w-7 h-7 rounded-full border border-gray-400 peer-checked:bg-[#FF5F26] flex items-center justify-center">
+        <svg class="w-4 h-4 text-white peer-checked:block hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+    </label>
+    <p class="text-base font-normal ${
+      sub.completed ? "line-through text-gray-500" : ""
+    }">${sub.title}</p>
+  </div>
+  <button class="delete-subtask-btn text-red-500 hover:text-red-700" data-subtask-id="${
+    sub.id
+  }" data-task-id="${task.id}" title="Hapus subtask">
+    <img src="/assets/images/Vector.png" alt=""/>
+  </button>
+</article>
+`
       )
       .join("");
   }
@@ -89,12 +96,15 @@ define(["jquery", "moment"], function ($, moment) {
         task.id
       }">
         <div class="flex gap-1 items-center my-3 md:gap-3 relative">
-          <input id="task-${
-            task.id
-          }" type="checkbox" class="w-[28px] h-[28px] rounded-full border border-gray-400 appearance-none" data-task-id="${
-        task.id
-      }" ${task.completed ? "checked" : ""}/>
-          <label for="task-${task.id}" class="flex flex-col">
+          <label class="relative cursor-pointer">
+            <input type="checkbox" class="sr-only peer task-checkbox" data-task-id="${
+              task.id
+            }" ${task.completed ? "checked" : ""}/>
+            <div class="custom-checkbox w-8 h-8 rounded-full border border-gray-400 peer-checked:bg-[#FF5F26] flex items-center justify-center">
+              
+            </div>
+          </label>
+          <label class="flex flex-col ml-2">
             <span class="taskTitle font-medium text-[#293038] text-base md:text-lg">${
               task.title
             }</span>
@@ -149,23 +159,24 @@ define(["jquery", "moment"], function ($, moment) {
     });
   }
 
-   function loadTasks() {
-     try {
-       return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-     } catch (error) {
-       console.error("Error loading tasks:", error);
-       return [];
-     }
-   }
-
-function saveTasks(tasks) {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
-  } catch (error) {
-    console.error("Error saving tasks:", error);
-    alert("Gagal menyimpan tugas. Storage penuh atau error.");
+  function loadTasks() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    } catch (error) {
+      console.error("Error loading tasks:", error);
+      return [];
+    }
   }
-}
+
+  function saveTasks(tasks) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+    } catch (error) {
+      console.error("Error saving tasks:", error);
+      alert("Gagal menyimpan tugas. Storage penuh atau error.");
+    }
+  }
+
   return {
     initToggleForm,
     renderTasks,
