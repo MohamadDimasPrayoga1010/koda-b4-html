@@ -133,7 +133,6 @@
                 name="by-tanggal"
                 id="byTime"
                 class="accent-[#FF5F26]"
-                
               />
             </div>
             <div class="flex justify-between items-center">
@@ -193,9 +192,7 @@
         </form>
       </section>
 
-      <section id="taskList" class="task-list my-3">
-        
-      </section>
+      <section id="taskList" class="task-list my-3"></section>
 
       <footer class="mt-auto">
         <div class="w-full border-t border-[#CCCED2]">
@@ -208,32 +205,12 @@
               alt="icon-arrow"
               id="iconUp"
             />
-            Terselesaikan (3 tugas)
+            Terselesaikan ()
           </button>
           <div
             id="taskComplate"
             class="flex justify-between items-center my-4 md:gap-3"
-          >
-            <div class="flex gap-2 items-center md:gap-3">
-              <input
-                type="checkbox"
-                name=""
-                id="task-user"
-                class="w-[28px] h-[28px] rounded-full border border-gray-400 appearance-none"
-              />
-              <div class="flex flex-col">
-                <label
-                  for="task-user"
-                  class="text-base font-medium text-[#293038] md:text-[18px]"
-                  >Product Design</label
-                >
-                <div><p>Tugas untuk desain team</p></div>
-              </div>
-            </div>
-            <button>
-              <img src="/assets/images/Arrow - Down 2.svg" alt="icon-arrow" />
-            </button>
-          </div>
+          ></div>
         </div>
       </footer>
     </main>
@@ -245,11 +222,9 @@
           "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min",
         moment:
           "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min",
-        addTask: "/assets/js/addTask", // path file addTask.js abang
+        addTask: "/assets/js/addTask",
       },
     });
-
-    // jalankan entry point
     require(["main"]);
   </script>
 </html>
