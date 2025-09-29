@@ -7,6 +7,62 @@ define(["jquery", "moment"], function ($, moment) {
 
     $("#addTask").on("click", () => $form.toggle());
 
+    $(document).on("change", ".task-checkbox", function () {
+      const $checkbox = $(this);
+      const taskId = $checkbox.data("task-id");
+      const $checkmark = $checkbox
+        .siblings(".custom-checkbox")
+        .find(".checkmark-icon");
+
+      if ($checkbox.is(":checked")) {
+        $checkmark.show();
+      } else {
+        $checkmark.hide();
+      }
+
+      const tasks = loadTasks();
+      const task = tasks.find((t) => t.id === taskId);
+      if (task) {
+        task.completed = $checkbox.is(":checked");
+        saveTasks(tasks);
+
+        renderTasks();
+
+        $(document).trigger("taskCompletionChanged");
+      }
+    });
+
+    $(document).on("change", ".subtask-checkbox", function () {
+      const $checkbox = $(this);
+      const taskId = $checkbox.closest(".subtask-item").data("task-id");
+      const subtaskId = $checkbox.data("subtask-id");
+      const $checkmark = $checkbox.siblings(".custom-checkbox").find("svg");
+
+      if ($checkbox.is(":checked")) {
+        $checkmark.show();
+      } else {
+        $checkmark.hide();
+      }
+
+      const tasks = loadTasks();
+      const task = tasks.find((t) => t.id === taskId);
+      if (task) {
+        const subtask = task.subtask.find((s) => s.id === subtaskId);
+        if (subtask) {
+          subtask.completed = $checkbox.is(":checked");
+
+          if (task.subtask.length > 0) {
+            task.completed = task.subtask.every((s) => s.completed);
+          }
+
+          saveTasks(tasks);
+          renderTasks();
+
+          $(document).trigger("taskCompletionChanged");
+        }
+      }
+    });
+
     $(document).on("click", "#new-task", function () {
       const $this = $(this);
       if (!$this.is(":checked")) return;
@@ -18,12 +74,25 @@ define(["jquery", "moment"], function ($, moment) {
         return;
       }
 
+      const dateInput = $("#taskDate").val().trim();
+
+      if (dateInput) {
+        const taskDate = moment(dateInput, ["DD/MM/YYYY", "DD-MM-YYYY"], true);
+        if (!taskDate.isValid()) {
+          alert(
+            "Format tanggal salah cuyy Gunakan format DD/MM/YYYY atau DD-MM-YYYY"
+          );
+          $this.prop("checked", false);
+          return;
+        }
+      }
+
       const tasks = loadTasks();
       const newTask = {
         id: Date.now(),
         title,
         desc: $("#taskDesc").val().trim(),
-        date: $("#taskDate").val().trim(),
+        date: dateInput,
         completed: false,
         createdAt: moment().format(),
         subtask: [],
@@ -32,7 +101,6 @@ define(["jquery", "moment"], function ($, moment) {
       tasks.push(newTask);
       saveTasks(tasks);
 
-  
       $("#taskTitle, #taskDesc, #taskDate").val("");
       $this.prop("checked", false);
       $form.hide();
@@ -59,13 +127,14 @@ define(["jquery", "moment"], function ($, moment) {
         sub.id
       }" data-task-id="${task.id}">
   <div class="flex items-center gap-3 my-3">
-    <!-- Custom Checkbox -->
     <label class="relative cursor-pointer">
       <input type="checkbox" class="sr-only peer subtask-checkbox" data-subtask-id="${
         sub.id
       }" ${sub.completed ? "checked" : ""}/>
       <div class="custom-checkbox w-7 h-7 rounded-full border border-gray-400 peer-checked:bg-[#FF5F26] flex items-center justify-center">
-        <svg class="w-4 h-4 text-white peer-checked:block hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="checkmark-icon w-4 h-4 text-white" style="display: ${
+          sub.completed ? "block" : "none"
+        };" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
         </svg>
       </div>
@@ -90,7 +159,9 @@ define(["jquery", "moment"], function ($, moment) {
     const $taskList = $("#taskList");
     $taskList.empty();
 
-    tasks.forEach((task) => {
+    const activeTasks = tasks.filter((task) => !task.completed);
+
+    activeTasks.forEach((task) => {
       const taskHtml = `
       <article class="flex justify-between items-center md:gap-3 task-item" data-task-id="${
         task.id
@@ -101,7 +172,11 @@ define(["jquery", "moment"], function ($, moment) {
               task.id
             }" ${task.completed ? "checked" : ""}/>
             <div class="custom-checkbox w-8 h-8 rounded-full border border-gray-400 peer-checked:bg-[#FF5F26] flex items-center justify-center">
-              
+              <svg class="checkmark-icon w-5 h-5 text-white" style="display: ${
+                task.completed ? "block" : "none"
+              };" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
             </div>
           </label>
           <label class="flex flex-col ml-2">
