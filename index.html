@@ -111,35 +111,47 @@
             class="absolute z-50 top-[80px] left-0 bg-white w-[250px] h-[144px] rounded-lg p-4 md:top-14 md:w-[300px] md:left-auto md:right-0 md:p-6 border border-[#CCCED2]"
             id="byDateTask"
           >
-            <div class="flex justify-between items-center mb-3">
-              <label for="byDate" class="text-base font-normal"
-                >By Tanggal</label
-              >
-              <input
-                type="radio"
-                name="by-tanggal"
-                id="byDate"
-                class="accent-[#FF5F26]"
-              />
-            </div>
-            <div class="flex justify-between items-center mb-3">
-              <label for="byTime" class="text-base font-normal">By Time</label>
-              <input
-                type="radio"
-                name="by-tanggal"
-                id="byTime"
-                class="accent-[#FF5F26]"
-              />
-            </div>
-            <div class="flex justify-between items-center">
-              <label for="latest" class="text-base font-normal">Terbaru</label>
-              <input
-                type="radio"
-                name="by-tanggal"
-                id="latest"
-                class="accent-[#FF5F26]"
-              />
-            </div>
+            <form>
+              <fieldset>
+                <legend class="sr-only">Sortir Tugas</legend>
+
+                <div class="flex justify-between items-center mb-3">
+                  <label for="byDate" class="text-base font-normal"
+                    >By Tanggal</label
+                  >
+                  <input
+                    type="radio"
+                    name="by-tanggal"
+                    id="byDate"
+                    class="accent-[#FF5F26]"
+                  />
+                </div>
+
+                <div class="flex justify-between items-center mb-3">
+                  <label for="byTime" class="text-base font-normal"
+                    >By Time</label
+                  >
+                  <input
+                    type="radio"
+                    name="by-tanggal"
+                    id="byTime"
+                    class="accent-[#FF5F26]"
+                  />
+                </div>
+
+                <div class="flex justify-between items-center">
+                  <label for="latest" class="text-base font-normal"
+                    >Terbaru</label
+                  >
+                  <input
+                    type="radio"
+                    name="by-tanggal"
+                    id="latest"
+                    class="accent-[#FF5F26]"
+                  />
+                </div>
+              </fieldset>
+            </form>
           </div>
         </div>
 
@@ -200,17 +212,14 @@
             class="flex items-center gap-2 mt-4 text-lg font-medium text-[#7A7F83]"
           >
             <img
-            class="w-5 h-5"
+              class="w-5 h-5"
               src="assets/images/Arrow - Right 2.png"
               alt="icon-arrow"
               id="iconUp"
             />
             Terselesaikan ()
           </button>
-          <div
-            id="taskComplate"
-            class="flex flex-col my-4 md:gap-3"
-          ></div>
+          <div id="taskComplate" class="flex flex-col my-4 md:gap-3"></div>
         </div>
       </footer>
     </main>
