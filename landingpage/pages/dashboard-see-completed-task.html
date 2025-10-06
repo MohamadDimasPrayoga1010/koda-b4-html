@@ -3,34 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/landingpage/style/dashboard-see-completed-task.css" />
-    <title>Dashboard-See completed task</title>
+    <link
+      rel="stylesheet"
+      href="/landingpage/style/dashboard-see-completed-task.css"
+    />
+    <title>Dashboard - See Completed Task</title>
   </head>
   <body>
     <nav>
-      <a href=""><img src="/assets/Logo.svg" alt="" class="logo" /></a>
+      <a href=""><img src="/assets/images/Logo.svg" alt="" class="logo" /></a>
       <div class="user-info">
         <ul>
           <li>
-            <a href=""
-              ><img
+            <a href="">
+              <img
                 class="notification"
-                src="/assets/Notification.svg"
+                src="/assets/images/Notification.svg"
                 alt="notification"
-            /></a>
+              />
+            </a>
           </li>
           <li>
             <a href="">
-              <img class="profile" src="/assets/Group 30.png" alt="profile"
-            /></a>
+              <img class="profile" src="/assets/images/Group 30.png" alt="profile" />
+            </a>
           </li>
           <li>
             <a href=""><p class="username">Krozeo Jupiter</p></a>
           </li>
           <li>
-            <a class="arrow" href=""
-              ><img src="/assets/Arrow - Down 2.svg" alt="arrow"
-            /></a>
+            <a class="arrow" href="">
+              <img src="/assets/images/Arrow - Down 2.svg" alt="arrow" />
+            </a>
           </li>
         </ul>
       </div>
@@ -47,54 +51,48 @@
             </div>
             <div class="addtask">
               <button class="add-btn">
-                <img src="/assets/Plus.svg" alt="plus" /><span
-                  >Tambah Tugas</span
-                >
+                <img src="/assets/images/Plus.svg" alt="plus" />
+                <span>Tambah Tugas</span>
               </button>
             </div>
           </div>
+
           <div class="sort">
             <p>Sort By</p>
             <button>
-              By Tanggal<img src="/assets/Arrow - Down 2.png" alt="" />
+              By Tanggal <img src="/assets/images/Arrow - Down 2.png" alt="" />
             </button>
           </div>
 
-          <div class="task">
+          <form class="task-form">
+            <div class="task">
               <input type="checkbox" name="check" id="check-1" />
-              <label for="check-1" class="checkbox">
-                <span></span>
-              </label>
+              <label for="check-1" class="checkbox"><span></span></label>
               <div class="task-container">
                 <div class="task-name">
                   <label for="check-1" class="task-label">Product Design</label>
                   <span class="badge">Hari ini</span>
                 </div>
-
                 <div class="note">Tugas untuk design team</div>
               </div>
-              <img src="/assets/Arrow - Down 2.svg" alt="arrow" class="arrow" />
+              <img src="/assets/images/Arrow - Down 2.svg" alt="arrow" class="arrow" />
             </div>
 
             <div class="task">
               <input type="checkbox" name="check" id="check-2" />
-              <label for="check-2" class="checkbox">
-                <span></span>
-              </label>
+              <label for="check-2" class="checkbox"><span></span></label>
               <div class="task-container">
                 <div class="task-name">
                   <label for="check-2" class="task-label">Development</label>
                   <span class="badge">15 Juni 2020</span>
                 </div>
               </div>
-              <img src="/assets/Arrow - Down 2.svg" alt="arrow" class="arrow" />
+              <img src="/assets/images/Arrow - Down 2.svg" alt="arrow" class="arrow" />
             </div>
 
             <div class="task">
               <input type="checkbox" name="check" id="check-3" />
-              <label for="check-3" class="checkbox">
-                <span></span>
-              </label>
+              <label for="check-3" class="checkbox"><span></span></label>
               <div class="task-container">
                 <div class="task-name">
                   <label for="check-3" class="task-label"
@@ -103,48 +101,72 @@
                   <span class="badge">20 Juni 2020</span>
                 </div>
               </div>
-              <img src="/assets/Arrow - Down 2.svg" alt="arrow" class="arrow" />
+              <img src="/assets/images/Arrow - Down 2.svg" alt="arrow" class="arrow" />
             </div>
-        </div>
-        <div class="task-end">
-          <div class="line"></div>
-          <div class="end">
-            <img src="/assets/Arrow - Up 2.png" alt="arrow-right" />
-            <p>Terselesaikan (3 tugas)</p>
-          </div>
-          <div class="task-complate">
-            <div class="task">
-              <input type="checkbox" name="task-complate" id="task-complate1" />
-              <label for="task-complate1" class="checkbox">
-                <span></span>
-              </label>
+          </form>
 
-              <label for="task-complate1" class="task-label-end">Requirements Detail</label>
-
-              <img src="/assets/Arrow - Down 2.svg" alt="arrow" class="arrow" />
+          <div class="task-end">
+            <div class="line"></div>
+            <div class="end">
+              <img src="/assets/images/Arrow - Up 2.png" alt="arrow-right" />
+              <p>Terselesaikan (3 tugas)</p>
             </div>
 
-            <div class="task">
-              <input type="checkbox" name="task-complate" id="task-complate2" />
-              <label for="task-complate2" class="checkbox">
-                <span></span>
-              </label>
+            <form class="completed-form">
+              <div class="task">
+                <input
+                  type="checkbox"
+                  name="task-complete"
+                  id="task-complete1"
+                  checked
+                />
+                <label for="task-complete1" class="checkbox"><span></span></label>
+                <label for="task-complete1" class="task-label-end">
+                  Requirements Detail
+                </label>
+                <img
+                  src="/assets/images/Arrow - Down 2.svg"
+                  alt="arrow"
+                  class="arrow"
+                />
+              </div>
 
-              <label for="task-complate2" class="task-label-end">Backlog Teams</label>
-              <img src="/assets/Arrow - Down 2.svg" alt="arrow" class="arrow" />
-            </div>
+              <div class="task">
+                <input
+                  type="checkbox"
+                  name="task-complete"
+                  id="task-complete2"
+                  checked
+                />
+                <label for="task-complete2" class="checkbox"><span></span></label>
+                <label for="task-complete2" class="task-label-end">
+                  Backlog Teams
+                </label>
+                <img
+                  src="/assets/images/Arrow - Down 2.svg"
+                  alt="arrow"
+                  class="arrow"
+                />
+              </div>
 
-            <div class="task">
-              <input type="checkbox" name="task-complate" id="task-complate3" />
-              <label for="task-complate3" class="checkbox">
-                <span></span>
-              </label>
-
-              <label for="task-complate3" class="task-label-end"
-                >Meeting With Teams</label
-              >
-              <img src="/assets/Arrow - Down 2.svg" alt="arrow" class="arrow" />
-            </div>
+              <div class="task">
+                <input
+                  type="checkbox"
+                  name="task-complete"
+                  id="task-complete3"
+                  checked
+                />
+                <label for="task-complete3" class="checkbox"><span></span></label>
+                <label for="task-complete3" class="task-label-end">
+                  Meeting With Teams
+                </label>
+                <img
+                  src="/assets/images/Arrow - Down 2.svg"
+                  alt="arrow"
+                  class="arrow"
+                />
+              </div>
+            </form>
           </div>
         </div>
       </section>
