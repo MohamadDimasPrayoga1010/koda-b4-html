@@ -130,6 +130,11 @@ section {
   color: #ffffff;
   cursor: pointer;
 }
+.addtask .add-btn:hover {
+  background-color: #e2551f; 
+  transform: scale(1.05); 
+  transition: all 0.2s ease-in-out;
+}
 
 .sort {
   display: flex;
@@ -163,6 +168,8 @@ section {
     margin-top: 16px;
     border-radius: 8px;
     padding: 16px;
+    display: grid;
+    grid-template-columns: auto;
 }
 
 
@@ -236,6 +243,8 @@ section {
   background-color: #ffebd3;
   border-radius: 50px;
 }
+
+
 
 .task-name img, .task-name-row img{
   width: 24px;
@@ -354,6 +363,7 @@ input[type="checkbox"]:checked ~ .subtask-label {
     font-size: 14px;
   }
 
+
   .sort {
     margin-top: 20px;
     flex-direction: column;
@@ -426,6 +436,7 @@ input[type="checkbox"]:checked ~ .subtask-label {
     max-width: fit-content;
     margin-left: 0;
   }
+ 
 
   .task-name-row .badge{
     padding: 4px 8px;
