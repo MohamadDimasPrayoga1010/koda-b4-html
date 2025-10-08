@@ -1,22 +1,28 @@
-define(["jquery"], function ($) {
-  function initCustomCheckbox() {
-    $(document).on("change", ".custom-checkbox", function () {
-      if (this.checked) {
-        this.style.backgroundImage = "url('assets/images/check-white.svg')";
-        this.style.backgroundSize = "80%";
-        this.style.backgroundRepeat = "no-repeat";
-        this.style.backgroundPosition = "center";
-        this.style.backgroundColor = "#ff5f26";
-        this.style.borderColor = "#ff5f26";
-      } else {
-        this.style.backgroundImage = "none";
-        this.style.backgroundColor = "transparent";
-        this.style.borderColor = "gray";
-      }
-    });
-  }
+export function initCustomCheckbox() {
+  $(document).on(
+    "change",
+    ".custom-checkbox input[type='checkbox']",
+    function () {
+      const $checkbox = $(this);
+      const $box = $checkbox.closest(".custom-checkbox");
 
-  return {
-    initCustomCheckbox: initCustomCheckbox,
-  };
-});
+      if ($checkbox.is(":checked")) {
+        $box.css({
+          backgroundImage: "url('assets/images/check-white.svg')",
+          backgroundSize: "80%",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundColor: "#ff5f26",
+          borderColor: "#ff5f26",
+        });
+      } else {
+        $box.css({
+          backgroundImage: "none",
+          backgroundColor: "transparent",
+          borderColor: "gray",
+        });
+      }
+    }
+  );
+}
+
