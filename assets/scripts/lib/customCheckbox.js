@@ -10,7 +10,7 @@ export function initCustomCheckbox() {
         $box.css({
           backgroundImage: "url('assets/images/check-white.svg')",
           backgroundSize: "80%",
-          backgroundRepeat: "no-repeat",
+          backgroundRepeat: "no-repeat ",
           backgroundPosition: "center",
           backgroundColor: "#ff5f26",
           borderColor: "#ff5f26",
