@@ -1,5 +1,5 @@
-define(["jquery", "moment", "addTask"], function ($, moment, addTask) {
-  function initToggleByDate() {
+import * as addTask from "./addTask.js";
+  export function initToggleByDate() {
     const $byDateContainer = $("#byDateTask");
     const $arrow = $("#arrowByDate");
     const $btn = $("#btnByDate");
@@ -74,7 +74,6 @@ define(["jquery", "moment", "addTask"], function ($, moment, addTask) {
     });
   }
 
-  return {
-    initToggleByDate,
-  };
-});
+ 
+  
+
