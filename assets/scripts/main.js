@@ -1,43 +1,22 @@
-require.config({
-  paths: {
-    jquery: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min",
-    moment:
-      "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min",
-    addTask: "./lib/addTask",
-    byDate: "./lib/byDate",
-    editTask: "./lib/editTask",
-    taskComplate: "./lib/taskComplate",
-    customCheckbox: "./lib/customCheckbox",
-    subtask: "./lib/subtask",
-  },
-});
+import { initToggleForm, renderTasks } from "./lib/addTask.js";
+import { initToggleByDate } from "./lib/byDate.js";
+import {
+  initToggleEdit,
+  initRenameTask,
+  initDeleteTask,
+} from "./lib/editTask.js";
+import { initTaskComplate } from "./lib/taskComplate.js";
+import { initCustomCheckbox } from "./lib/customCheckbox.js";
+import { initSubtaskToggle } from "./lib/subtask.js";
 
-require([
-  "jquery",
-  "addTask",
-  "byDate",
-  "editTask",
-  "taskComplate",
-  "customCheckbox",
-  "subtask",
-], function (
-  $,
-  addTask,
-  byDate,
-  editTask,
-  taskComplate,
-  customCheckbox,
-  subtask
-) {
-  $(document).ready(function () {
-    addTask.initToggleForm();
-    addTask.renderTasks();
-    byDate.initToggleByDate();
-    editTask.initToggleEdit();
-    editTask.initRenameTask();
-    editTask.initDeleteTask();
-    taskComplate.initTaskComplate();
-    customCheckbox.initCustomCheckbox();
-    subtask.initSubtaskToggle();
-  });
+$(document).ready(function () {
+  initToggleForm();
+  renderTasks();
+  initToggleByDate();
+  initToggleEdit();
+  initRenameTask();
+  initDeleteTask();
+  initTaskComplate();
+  initCustomCheckbox();
+  initSubtaskToggle();
 });
